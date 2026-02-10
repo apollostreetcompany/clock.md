@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { WaveMatrix } from './WaveMatrix';
+import { MatrixClock } from './MatrixClock';
 import { Download, ShoppingCart, Github, BookOpen } from 'lucide-react';
 
 export interface ClockLandingPageProps {
@@ -36,7 +36,7 @@ export const ClockLandingPage = ({
         aria-hidden="true"
         style={{
           backgroundImage:
-            'url("data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"%3E%3Cfilter id=\"n\" x=\"0\" y=\"0\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"200\" height=\"200\" filter=\"url(%23n)\" opacity=\"0.4\"/%3E%3C/svg%3E")',
+            'url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Cfilter id="n" x="0" y="0"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="200" height="200" filter="url(%23n)" opacity="0.4"/%3E%3C/svg%3E")',
           backgroundRepeat: 'repeat'
         }}
       />
@@ -63,7 +63,7 @@ export const ClockLandingPage = ({
           </motion.p>
         </motion.div>
 
-        {/* Wave Matrix */}
+        {/* Matrix Clock */}
         <motion.div
           className="flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -72,7 +72,7 @@ export const ClockLandingPage = ({
           style={{ perspective: '1000px' }}
         >
           <div className="transform scale-75 md:scale-90 lg:scale-100">
-            <WaveMatrix dotSize={12} gap={6} brightness={1} />
+            <MatrixClock dotSize={12} gap={6} brightness={1} />
           </div>
         </motion.div>
 

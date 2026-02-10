@@ -39,7 +39,7 @@ export function WaveMatrix({ dotSize = 12, gap = 6, brightness = 1, className }:
     resize();
     window.addEventListener('resize', resize);
 
-    const render = (_t: number) => {
+    const render = () => {
 
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;

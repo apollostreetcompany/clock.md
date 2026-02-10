@@ -1,16 +1,16 @@
 import ClockLandingPage from './components/ClockLandingPage';
-
-const WEBSITE_URL = 'https://clock.md';
-const GITHUB_URL = 'https://github.com/apollostreetcompany/clock.md';
-const INSTALL_URL = 'https://raw.githubusercontent.com/apollostreetcompany/clock.md/main/clock.md';
+import { BLOG_URL, GITHUB_URL, RAW_CLOCK_MD_URL, STRIPE_PAYMENT_LINK } from './config';
 
 export default function App() {
   return (
     <ClockLandingPage
-      onInstallClick={() => window.open(INSTALL_URL, '_blank', 'noopener,noreferrer')}
-      onBuyClick={() => window.open(WEBSITE_URL, '_blank', 'noopener,noreferrer')}
+      onInstallClick={() => window.open(RAW_CLOCK_MD_URL, '_blank', 'noopener,noreferrer')}
+      onBuyClick={() => {
+        if (!STRIPE_PAYMENT_LINK) return;
+        window.open(STRIPE_PAYMENT_LINK, '_blank', 'noopener,noreferrer');
+      }}
       onGithubClick={() => window.open(GITHUB_URL, '_blank', 'noopener,noreferrer')}
-      onBlogClick={() => window.open(WEBSITE_URL, '_blank', 'noopener,noreferrer')}
+      onBlogClick={() => window.open(BLOG_URL, '_blank', 'noopener,noreferrer')}
     />
   );
 }
